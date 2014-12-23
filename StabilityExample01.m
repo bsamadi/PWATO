@@ -2,3 +2,4 @@
 
 sys = LinearSystem(3);
 P = Lyapunov(sys);
+eig(sys.A)
