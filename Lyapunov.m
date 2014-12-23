@@ -9,6 +9,6 @@ I = eye(n);
 cvx_begin sdp
     variable P(n,n) symmetric
     minimize ( trace(P) )
-	P >= I
+	  P >= I
     sys.A'*P+P*sys.A <= - I;
 cvx_end

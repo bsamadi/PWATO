@@ -31,14 +31,22 @@
                  obj.nx = A;
                  obj.nu = B;
                  obj.ny = C;
+               elseif nargin == 1
+                 obj.A = normrnd(0,1,[A,A]);
+                 obj.B = normrnd(0,1,[A,1]);
+                 obj.C = normrnd(0,1,[1,A]);
+                 obj.D = normrnd(0,1,[1,1]);                   
+                 obj.nx = A;
+                 obj.nu = 1;
+                 obj.ny = 1;
                elseif nargin == 0
                  obj.A = normrnd(0,1,[2,2]);
                  obj.B = normrnd(0,1,[2,1]);
-                 obj.C = normrnd(0,1,[2,2]);
-                 obj.D = normrnd(0,1,[2,1]);                   
+                 obj.C = normrnd(0,1,[1,2]);
+                 obj.D = normrnd(0,1,[1,1]);                   
                  obj.nx = 2;
                  obj.nu = 1;
-                 obj.ny = 2;
+                 obj.ny = 1;
                else
                  print_usage ();
                endif
